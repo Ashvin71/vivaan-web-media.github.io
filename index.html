@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vivaan Web Media | Web Design, SEO, Digital Marketing & Commercial Photography</title>
+    <meta name="description" content="Vivaan Web Media provides website design, SEO, digital marketing, branding, product photography, food photography, and commercial photography services in Illinois, the Midwest, and across the United States.">
+    <meta name="keywords" content="Vivaan Web Media, Springfield IL web design, Chicago web design, Illinois SEO services, digital marketing, commercial photography, product photography, food photography, business branding, Midwest web design, nationwide web design services">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+:root {
+  --bg: #090a0f;
+  --panel: #11131b;
+  --panel-soft: #171923;
+  --text: #d7dbe4;
+  --muted: #b7bdca;
+  --soft: #737b8d;
+  --line: rgba(238, 240, 245, 0.12);
+  --gold: #d4b258;
+  --silver: #d7dbe4;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, Arial, sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+body::before {
+  content: none;
+}
+
+a { color: inherit; text-decoration: none; }
+
+img { display: block; max-width: 100%; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 76px;
+  padding: 0 5vw;
+  background: rgba(9, 10, 15, 0.82);
+  border-bottom: 0;
+  backdrop-filter: blur(18px);
+}
+
+.site-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(212, 178, 88, 0.22), rgba(255, 230, 158, 0.74), rgba(153, 103, 28, 0.28), transparent);
+  box-shadow:
+    0 -1px 0 rgba(255, 238, 185, 0.2),
+    0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.brand, .nav-links, .hero-actions, .area-points, .contact-details {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  gap: 12px;
+  color: var(--silver);
+  font-size: 0.92rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.brand img {
+  width: auto;
+  height: 58px;
+  object-fit: contain;
+}
+
+.nav-links {
+  gap: 28px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.nav-links a:hover { color: var(--text); }
+
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  background: transparent;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 18px;
+  height: 1px;
+  margin: 7px auto;
+  background: var(--silver);
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: calc(92vh - 76px);
+  padding: 32px 5vw 48px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 4;
+  width: min(920px, 100%);
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--gold);
+  font-size: 0.76rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+h1, h2, h3, p { margin-top: 0; }
+
+h1 {
+  margin-bottom: 26px;
+  color: var(--silver);
+  font-size: clamp(2.8rem, 6vw, 6.6rem);
+  font-weight: 300;
+  line-height: 0.98;
+}
+
+.hero-logo {
+  width: min(520px, 80vw);
+  margin: 0 auto 18px;
+}
+
+h2 {
+  color: var(--silver);
+  font-size: clamp(1.7rem, 3vw, 3rem);
+  font-weight: 300;
+  line-height: 1.12;
+}
+
+h3 {
+  color: var(--silver);
+  font-size: 1.05rem;
+  font-weight: 400;
+}
+
+.hero-lines {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+  max-width: 780px;
+  margin: 0 auto 18px;
+  color: #c4c9d5;
+  font-size: clamp(1rem, 1.5vw, 1.42rem);
+  letter-spacing: 0.11em;
+  text-align: center;
+}
+
+.hero-lines strong {
+  flex-basis: 100%;
+  color: var(--gold);
+  font-weight: 400;
+  text-align: center;
+}
+
+.hero-subtitle {
+  max-width: 860px;
+  margin: 0 auto 22px;
+  color: var(--muted);
+  font-size: 0.96rem;
+  white-space: nowrap;
+}
+
+.hero-actions { justify-content: center; gap: 14px; }
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 22px;
+  border: 1px solid var(--line);
+  font: inherit;
+  cursor: pointer;
+}
+
+.button.primary {
+  background: var(--gold);
+  color: #111111;
+  border-color: var(--gold);
+  font-weight: 400;
+}
+
+.button.ghost { color: var(--silver); }
+
+.hero-visual {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  min-height: auto;
+  border: 0;
+  outline: 0;
+  background:
+    radial-gradient(circle at 72% 38%, rgba(107, 83, 255, 0.28), transparent 36%),
+    radial-gradient(circle at 18% 46%, rgba(212, 178, 88, 0.08), transparent 34%),
+    linear-gradient(135deg, #10121b, #080910 72%);
+  box-shadow: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(8, 9, 16, 0.36), rgba(8, 9, 16, 0.84) 58%),
+    linear-gradient(90deg, rgba(8, 9, 16, 0.86), rgba(8, 9, 16, 0.58), rgba(8, 9, 16, 0.86));
+}
+
+.code-wash {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  align-content: center;
+  gap: 18px;
+  padding: 46px;
+  color: rgba(235, 238, 245, 0.12);
+  font-family: "Courier New", monospace;
+  font-size: 1.15rem;
+  animation: floatCode 9s ease-in-out infinite alternate;
+}
+
+.hero-slider, .hero-slider img {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.04);
+  mix-blend-mode: screen;
+  filter: saturate(1.05) contrast(1.08);
+  animation: heroFade 15s infinite;
+}
+
+.hero-slider img:nth-child(2) { animation-delay: 5s; }
+.hero-slider img:nth-child(3) { animation-delay: 10s; }
+
+.section {
+  padding: 84px 5vw;
+  border-top: 1px solid var(--line);
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: 0.58fr 1fr;
+  gap: 8vw;
+  align-items: end;
+  margin-bottom: 38px;
+}
+
+.section-heading.compact { margin-bottom: 28px; }
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.service-grid article {
+  min-height: 240px;
+  padding: 30px;
+  background: var(--panel);
+}
+
+.service-grid span {
+  display: block;
+  margin-bottom: 42px;
+  color: var(--gold);
+}
+
+.service-grid p, .about-copy p, .area-copy p, .contact-intro p {
+  color: var(--muted);
+}
+
+.industries { background: #0d0f15; }
+
+.industry-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.industry-list span, .area-points span {
+  border: 1px solid var(--line);
+  color: var(--silver);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 10px 14px;
+  font-size: 0.92rem;
+}
+
+.portfolio {
+  position: relative;
+  background:
+    linear-gradient(rgba(9, 10, 15, 0.88), rgba(9, 10, 15, 0.95)),
+    radial-gradient(circle at 24% 12%, rgba(212, 178, 88, 0.12), transparent 32%),
+    #08090d;
+}
+
+.portfolio .section-heading {
+  display: block;
+  text-align: center;
+}
+
+.portfolio .section-heading h2 {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: clamp(1.25rem, 2vw, 2rem);
+}
+
+.portfolio .eyebrow {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 16px;
+}
+
+.portfolio .eyebrow::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 170px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transform: translateX(-50%);
+}
+
+.gallery-frame {
+  position: relative;
+  height: min(68vh, 650px);
+  min-height: 420px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.018);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.gallery-track,
+.gallery-track img {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-track img {
+  object-fit: cover;
+  background: #050609;
+  opacity: 0;
+  animation: slideIn 520ms ease forwards;
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 4;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: rgba(9, 10, 15, 0.72);
+  color: var(--gold);
+  font-size: 2.3rem;
+  font-weight: 300;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.gallery-arrow.prev { left: 14px; }
+.gallery-arrow.next { right: 14px; }
+
+.gallery-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  display: flex;
+  gap: 14px;
+  transform: translateX(-50%);
+}
+
+.gallery-dot {
+  width: 10px;
+  height: 10px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(215, 219, 228, 0.35);
+  padding: 0;
+  cursor: pointer;
+}
+
+.gallery-dot.active {
+  background: var(--gold);
+}
+
+.about, .areas, .contact {
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: 7vw;
+  align-items: start;
+}
+
+.about-copy {
+  display: grid;
+  gap: 12px;
+  font-size: 1.04rem;
+}
+
+.areas {
+  align-items: center;
+  background: #0d0f15;
+}
+
+.area-points {
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.map-image {
+  width: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.contact-form {
+  display: grid;
+  gap: 16px;
+  padding: 28px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+
+.contact-form label, .contact-form legend {
+  color: var(--silver);
+  font-size: 0.92rem;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  margin-top: 8px;
+  border: 1px solid var(--line);
+  background: #0b0d13;
+  color: var(--silver);
+  padding: 13px 14px;
+  font: inherit;
+}
+
+.contact-form fieldset {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 16px;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+}
+
+.contact-form fieldset input {
+  width: auto;
+  margin: 0 8px 0 0;
+}
+
+.contact-details {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--silver);
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 34px 5vw;
+  color: var(--soft);
+  border-top: 1px solid var(--line);
+}
+
+@keyframes heroFade {
+  0%, 26% { opacity: 0.15; transform: scale(1); }
+  34%, 100% { opacity: 0; transform: scale(1.05); }
+}
+
+@keyframes floatCode {
+  from { transform: translateY(-12px); }
+  to { transform: translateY(18px); }
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 980px) {
+  .nav-toggle { display: block; }
+  .nav-links {
+    position: fixed;
+    inset: 76px 0 auto 0;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 5vw;
+    background: rgba(9, 10, 15, 0.96);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-links.open { display: flex; }
+  .section-heading, .about, .areas, .contact {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    min-height: auto;
+    padding-top: 56px;
+  }
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header { padding: 0 18px; }
+  .brand img { height: 48px; }
+  .hero, .section { padding-left: 18px; padding-right: 18px; }
+  .hero-lines { gap: 7px 12px; }
+  .hero-subtitle { white-space: normal; font-size: 0.92rem; }
+  .hero-actions, .site-footer { flex-direction: column; align-items: stretch; }
+  .service-grid, .contact-form fieldset { grid-template-columns: 1fr; }
+  .gallery-frame { min-height: 330px; height: 54vh; }
+  .gallery-arrow { width: 42px; height: 42px; font-size: 1.8rem; }
+  .contact-form { padding: 20px; }
+}
+
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Vivaan Web Media home">
+        <img src="vivaan-web-media-logo-clean.png" alt="Vivaan Web Media">
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#services">What We Do</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#areas">Service Areas</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Web Design</p>
+          <img class="hero-logo" src="vivaan-web-media-logo-clean.png" alt="Vivaan Web Media">
+          <div class="hero-lines" aria-label="Core services">
+            <span>Web Design, SEO, Digital Marketing</span>
+            <strong>Commercial Photography</strong>
+          </div>
+          <p class="hero-subtitle">Helping small businesses, growing brands, and corporate organizations grow online nationwide.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#contact">Start a Project</a>
+            <a class="button ghost" href="#portfolio">View Work</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Digital media and photography preview">
+          <div class="code-wash" aria-hidden="true">
+            <span>&lt;section class="growth"&gt;</span>
+            <span>design + seo + media</span>
+            <span>launch("vivaan");</span>
+          </div>
+          <div class="hero-slider">
+            <img src="hero-coding-large.png" alt="Abstract coding and web design visual">
+            <img src="web-design-code-slide.jpg" alt="Web design code and target graphic">
+            <img src="developer-desk-purple.jfif" alt="Developer desk with purple coding screens">
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section services-section">
+        <div class="section-heading">
+          <p class="eyebrow">What We Do</p>
+          <h2>Digital presence, visual content, and growth support in one place.</h2>
+        </div>
+        <div class="service-grid">
+          <article>
+            <span>01</span>
+            <h3>Website Design & Development</h3>
+            <p>Modern, responsive websites built for credibility, conversion, and easy customer action.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>SEO Optimization</h3>
+            <p>Local and regional SEO strategy for better visibility across Illinois, the Midwest, and national markets.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Digital Marketing</h3>
+            <p>Campaign direction, content planning, and brand messaging that help businesses attract qualified leads.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Commercial Photography</h3>
+            <p>Professional product, food, brand, and business photography created for websites and marketing.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section industries">
+        <div class="section-heading compact">
+          <p class="eyebrow">Industries We Serve</p>
+          <h2>Built for local businesses, regional brands, and corporate organizations.</h2>
+        </div>
+        <div class="industry-list">
+          <span>Restaurant Website Design</span>
+          <span>Hotel Website Design</span>
+          <span>Medical Practice Website Design</span>
+          <span>Law Firm Website Design</span>
+          <span>Contractor Website Design</span>
+          <span>Transportation Website Design</span>
+          <span>Retail Website Design</span>
+          <span>Corporate Website Design</span>
+          <span>Small Business Website Design</span>
+          <span>E-Commerce Website Design</span>
+        </div>
+      </section>
+
+      <section id="portfolio" class="section portfolio">
+        <div class="section-heading compact">
+          <p class="eyebrow">Commercial Photography</p>
+        </div>
+        <div class="gallery-frame">
+          <button class="gallery-arrow prev" type="button" aria-label="Previous image">&lsaquo;</button>
+          <div class="gallery-track" aria-live="polite">
+          </div>
+          <button class="gallery-arrow next" type="button" aria-label="Next image">&rsaquo;</button>
+          <div class="gallery-dots" aria-label="Gallery pages"></div>
+        </div>
+      </section>
+
+      <section id="about" class="section about">
+        <div>
+          <p class="eyebrow">About Vivaan Web Media</p>
+          <h2>Experienced creative support for businesses that need to look established online.</h2>
+        </div>
+        <div class="about-copy">
+          <p>Vivaan Web Media is built on decades of photography, customer service, and business experience. Our creative journey began in the early 1990s and developed into a professional photography business in 1999.</p>
+          <p>After establishing a strong presence in the Chicago market in 2008, we continued serving clients throughout the Midwest and New Jersey for many years. Today, Vivaan Web Media combines visual storytelling experience with modern website design, SEO, digital marketing, branding, and commercial photography services.</p>
+          <p>Based in Springfield, Illinois, we proudly help small businesses, growing brands, restaurants, hotels, retail stores, healthcare providers, contractors, professional service firms, and corporate organizations build a stronger online presence and attract more customers.</p>
+        </div>
+      </section>
+
+      <section id="areas" class="section areas">
+        <div class="area-copy">
+          <p class="eyebrow">Service Areas</p>
+          <h2>Based in Springfield, Illinois, serving businesses across major U.S. markets.</h2>
+          <p>Vivaan Web Media supports small businesses, growing brands, and corporate organizations from our Springfield, Illinois head office. We serve clients throughout Illinois and provide website design, SEO, digital marketing, branding, and commercial photography services for businesses across the United States.</p>
+          <div class="area-points">
+            <span>Springfield, IL</span>
+            <span>Chicago, IL</span>
+            <span>New Jersey</span>
+            <span>New York</span>
+            <span>Midwest Region</span>
+            <span>Nationwide Service</span>
+          </div>
+        </div>
+        <img class="map-image" src="service-map.jpg" alt="United States service area map highlighting Springfield, Chicago, St. Louis, New Jersey, and New York">
+      </section>
+
+      <section id="contact" class="section contact">
+        <div class="contact-intro">
+          <p class="eyebrow">Contact</p>
+          <h2>Vivaan Web Media</h2>
+          <p>Vivaan Web Media provides website design, SEO, digital marketing, branding, product photography, food photography, and commercial photography services for businesses across Illinois, the Midwest, and the United States.</p>
+          <div class="contact-details">
+            <span>Vivaan Web Media</span>
+            <span>Phone: 217-220-7255</span>
+            <span>Email: vivaanwebmedia@yahoo.com</span>
+            <span>Website: vivaanwebmedia.com</span>
+            <span>Head Office: Springfield, IL 62704</span>
+            <span>Serving: Springfield, Chicago, New Jersey, New York, the Midwest, and clients nationwide</span>
+          </div>
+        </div>
+        <form class="contact-form" action="mailto:vivaanwebmedia@yahoo.com" method="post" enctype="text/plain">
+          <label>Name <input name="name" type="text" required></label>
+          <label>Email <input name="email" type="email" required></label>
+          <label>Phone <input name="phone" type="tel"></label>
+          <fieldset>
+            <legend>Services Needed</legend>
+            <label><input type="checkbox" name="service" value="Website Design"> Website Design</label>
+            <label><input type="checkbox" name="service" value="Website Redesign"> Website Redesign</label>
+            <label><input type="checkbox" name="service" value="SEO"> SEO</label>
+            <label><input type="checkbox" name="service" value="Digital Marketing"> Digital Marketing</label>
+            <label><input type="checkbox" name="service" value="Commercial Photography"> Commercial Photography</label>
+            <label><input type="checkbox" name="service" value="Product Photography"> Product Photography</label>
+            <label><input type="checkbox" name="service" value="Food Photography"> Food Photography</label>
+          </fieldset>
+          <label>Project Details <textarea name="message" rows="5"></textarea></label>
+          <button class="button primary" type="submit">Send Inquiry</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Vivaan Web Media</span>
+      <span>Web Design • SEO • Digital Marketing • Commercial Photography</span>
+    </footer>
+    <script>
+const galleries = {
+  web: [
+    "hero-digital.jpg",
+    "hero-media.jpg",
+    "hero-photo.jpg"
+  ],
+  commercial: [
+    "perfume-green-bottle.jpg",
+    "perfume-dropper-orchid.jpg",
+    "perfume-lily-bottle.jpg",
+    "samsung-phone.jpg",
+    "real-apple-juice.jpg",
+    "himalaya-face-wash.jpg",
+    "coffee-packaging-mockup.jpg",
+    "mens-skincare.jpg",
+    "tomato-paste.jpg",
+    "tomato-soup.jpg",
+    "starbucks-drink.jpg",
+    "mcdonalds-burger.jpg",
+    "dessert-pastry.jpg",
+    "grocery-green-poster.jpg",
+    "grocery-yellow-poster.jpg",
+    "grocery-black-poster.jpg"
+  ],
+  product: [
+    "perfume-green-bottle.jpg",
+    "perfume-dropper-orchid.jpg",
+    "perfume-lily-bottle.jpg",
+    "samsung-phone.jpg",
+    "real-apple-juice.jpg",
+    "himalaya-face-wash.jpg",
+    "coffee-packaging-mockup.jpg",
+    "mens-skincare.jpg",
+    "tomato-paste.jpg",
+    "tomato-soup.jpg"
+  ],
+  food: [
+    "starbucks-drink.jpg",
+    "mcdonalds-burger.jpg",
+    "dessert-pastry.jpg",
+    "real-apple-juice.jpg",
+    "coffee-packaging-mockup.jpg",
+    "tomato-paste.jpg",
+    "tomato-soup.jpg",
+    "grocery-green-poster.jpg",
+    "grocery-yellow-poster.jpg",
+    "grocery-black-poster.jpg"
+  ]
+};
+
+const galleryTrack = document.querySelector(".gallery-track");
+const galleryDots = document.querySelector(".gallery-dots");
+const prev = document.querySelector(".gallery-arrow.prev");
+const next = document.querySelector(".gallery-arrow.next");
+let activeGallery = "commercial";
+let activeIndex = 0;
+let galleryTimer;
+
+function renderGallery() {
+  const images = galleries[activeGallery];
+  const img = document.createElement("img");
+  img.src = images[activeIndex];
+  img.alt = "";
+  galleryTrack.replaceChildren(img);
+  renderDots();
+}
+
+function renderDots() {
+  const dots = [];
+  for (let index = 0; index < galleries[activeGallery].length; index += 1) {
+    const dot = document.createElement("button");
+    dot.className = `gallery-dot${index === activeIndex ? " active" : ""}`;
+    dot.type = "button";
+    dot.setAttribute("aria-label", `Show gallery page ${index + 1}`);
+    dot.addEventListener("click", () => {
+      activeIndex = index;
+      renderGallery();
+      startGalleryTimer();
+    });
+    dots.push(dot);
+  }
+  galleryDots.replaceChildren(...dots);
+}
+
+function showNext(step = 1) {
+  const images = galleries[activeGallery];
+  activeIndex = (activeIndex + step + images.length) % images.length;
+  renderGallery();
+}
+
+function startGalleryTimer() {
+  clearInterval(galleryTimer);
+  galleryTimer = setInterval(() => showNext(1), 4000);
+}
+
+prev.addEventListener("click", () => {
+  showNext(-1);
+  startGalleryTimer();
+});
+
+next.addEventListener("click", () => {
+  showNext(1);
+  startGalleryTimer();
+});
+
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+navToggle.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+  navToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+navLinks.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    navToggle.setAttribute("aria-expanded", "false");
+  });
+});
+
+renderGallery();
+startGalleryTimer();
+
+    </script>
+  </body>
+</html>
